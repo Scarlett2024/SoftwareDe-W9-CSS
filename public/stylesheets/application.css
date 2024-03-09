@@ -1,0 +1,27 @@
+/* body {
+  background-color: cornsilk;
+}
+
+p {
+  color:green;
+}
+
+p a {
+  color:green;
+  text-decoration: none;
+}
+
+h1 {
+  font-size: 25px;
+}
+
+/*In one HTML page, an ID can appear only once. for an ID, use #ID to define its style. */
+/* #title {
+  font-size: 35px;
+} */
+
+/*In one HTML page, a class can appear multiple times. for a class, use .Class to define its style. */
+/* #title {
+.border {
+  border: 2px solid green;
+} */ 

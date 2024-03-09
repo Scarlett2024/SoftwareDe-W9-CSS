@@ -16,30 +16,40 @@
 </head>
 
 <body>
-  <p>
+<nav class="navbar bg-primary mb-3" data-bs-theme="dark"
+ <div class="container-fluid">
+   <a class="navbar-brand" href="/">My App</a>
+   <span class="navbar-text">
     <% @user = User.find_by({ "id" => session["user_id"] }) %>
     <% if @user == nil %>
-      <a href="/users/new">Sign Up</a>
+      <a href="/users/new" class="btn btn-primary">Sign Up</a>
       |
-      <a href="/login">Login</a>
+      <a href="/login" class="btn btn-primary">Login</a>
     <% else %>
       Logged in as: <%= @user["first_name"] %>
       |
-      <a href="/logout">Logout</a>
+      <a href="/logout" class="btn btn-primary">Logout</a>
     <% end %>
-  </p>
+   </span>
+ </div>
+</nav>
+
+<div class="container">
+ 
+  <% if flash["notice"] != nil %>
+    <div class="alert alert-primary">
+      <%= flash["notice"] %>
+    </div>
+  <% end %>
 
   <div class="border">
     <h1 id="title">Tacostagram</h1>
     <div>
-      <a href="/posts/new/">New Post</a>
+      <a href="/posts/new/" class="btn btn-success">New Post</a>
     </div>
   </div>
 
-  <div>
-    <%= flash["notice"] %>
-  </div>
-
   <%= yield %>
+</div>
 </body>
 </html>
